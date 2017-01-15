@@ -14,16 +14,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        MVRequest.getRequest(new NetworkListener<List<HomeListItemBean>>() {
-            @Override
-            public void onFailed(String s) {
-
-            }
-
-            @Override
-            public void onSuccess(List<HomeListItemBean> result) {
-                Toast.makeText(MainActivity.this, "onSuccess " + result.size(), Toast.LENGTH_SHORT).show();
-            }
-        }).execute();
+        MVRequest.getRequest(mListNetworkListener).execute();
     }
+
+    private NetworkListener<List<HomeListItemBean>> mListNetworkListener = new NetworkListener<List<HomeListItemBean>>() {
+        @Override
+        public void onFailed(String s) {
+
+        }
+
+        @Override
+        public void onSuccess(List<HomeListItemBean> result) {
+            Toast.makeText(MainActivity.this, "onSuccess " + result.size(), Toast.LENGTH_SHORT).show();
+        }
+    };
 }
