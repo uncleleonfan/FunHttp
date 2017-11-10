@@ -40,7 +40,11 @@ public class NetworkManager {
     }
 
     public void sendRequest(final Request funRequest) {
-        final okhttp3.Request request = new okhttp3.Request.Builder().url(funRequest.getUrl()).get().build();
+        final okhttp3.Request request = new okhttp3.Request.Builder()
+                .url(funRequest.getUrl())
+                .addHeader("Connection", "close")
+                .get().build();
+
         mOkHttpClient.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, final IOException e) {
