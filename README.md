@@ -12,7 +12,7 @@ FunHttp是对Okttp的Get请求的简单封装，处理了网络回调的线程�
 
 	//app模块下的build.gradle
 	dependencies {
-	        compile 'com.github.uncleleonfan:funhttp:1.0'
+	        compile 'com.github.uncleleonfan:funhttp:1.2.1'
 	}
 
 ## 创建请求 ##
