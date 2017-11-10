@@ -42,7 +42,6 @@ public class NetworkManager {
     public void sendRequest(final Request funRequest) {
         final okhttp3.Request request = new okhttp3.Request.Builder()
                 .url(funRequest.getUrl())
-                .addHeader("Connection", "close")
                 .get().build();
 
         mOkHttpClient.newCall(request).enqueue(new Callback() {
@@ -58,6 +57,7 @@ public class NetworkManager {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
+                response.header("Connection", "close");
                 ResponseBody body = response.body();
                 //解析结果在在子线程做
                 final Object o = funRequest.parseNetworkResponse(body.string());
