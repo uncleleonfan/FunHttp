@@ -9,6 +9,7 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Response;
+import okhttp3.ResponseBody;
 
 /**
  * NetworkManager 持有一个OkHttpClient对象来发送网络请求，处理网络结果的线程的切换
@@ -53,8 +54,10 @@ public class NetworkManager {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
+                ResponseBody body = response.body();
                 //解析结果在在子线程做
-                final Object o = funRequest.parseNetworkResponse(response.body().string());
+                final Object o = funRequest.parseNetworkResponse(body.string());
+                body.close();
                 //回调网络请求成功，传入解析后的结果
                 mHandler.post(new Runnable() {
                     @Override

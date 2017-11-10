@@ -3,8 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FunHttp.iml" filepath="$PROJECT_DIR$/FunHttp.iml" />
+      <module fileurl="file://C:\Work\workspace\AndroidStudioProjects\FunHttp\FunHttp.iml" filepath="C:\Work\workspace\AndroidStudioProjects\FunHttp\FunHttp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Work\workspace\AndroidStudioProjects\FunHttp\app\app.iml" filepath="C:\Work\workspace\AndroidStudioProjects\FunHttp\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/funhttplib/funhttplib.iml" filepath="$PROJECT_DIR$/funhttplib/funhttplib.iml" />
+      <module fileurl="file://C:\Work\workspace\AndroidStudioProjects\FunHttp\funhttplib\funhttplib.iml" filepath="C:\Work\workspace\AndroidStudioProjects\FunHttp\funhttplib\funhttplib.iml" />
     </modules>
   </component>
 </project>
